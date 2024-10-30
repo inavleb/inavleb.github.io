@@ -27,7 +27,7 @@ $(window).on('load', () => {
   $('a[href="dialog:chat"]').click(dialogChat).attr('title', function() { return `Conversar com ${vcard.fn} no ${$(this).text().trim()}`; }).attr('aria-label', function() { return $(this).attr('title'); });
   $('[ data-btn-download="qr-code"]').click(() => {
     qrcode.instance.download({
-      name: `${vcard.fn} — ${$('a[href="dialog:tel"]').text()}.qr_code`
+      name: `${vcard.fn} — ${$('a[href="dialog:tel"]').text().trim()}.qr_code`
     });
   });
 
