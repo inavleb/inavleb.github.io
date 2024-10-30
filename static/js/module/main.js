@@ -29,6 +29,8 @@ $(window).on('load', () => {
     qrcode.instance.download({
       name: `${vcard.fn} — ${$('a[href="dialog:tel"]').text().trim()}.qr_code`
     });
+
+    return false;
   });
 
   qrcode.instance.getRawData().then(blob => {
@@ -48,4 +50,6 @@ $(window).on('load', () => {
       });
     });
   });
+
+  return false;
 });
