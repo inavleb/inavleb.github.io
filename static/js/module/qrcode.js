@@ -5,7 +5,7 @@ const qrcode = data => {
     height: 512,
     type: 'svg',
     // image: '/static/img/svg/tel-icon.svg',
-    margin: 0,
+    margin: 25,
     qrOptions: {
       errorCorrectionLevel: 'M'
     },
