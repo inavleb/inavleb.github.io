@@ -39,7 +39,13 @@ $(window).on('load', () => {
 
     $(document.head).append(qrcode.style);
     $(document.body).waitForImages(function() {
-      $(splashScreen).fadeOut(() => $(this).removeClass('overflow-hidden'));
+      $(splashScreen).fadeOut(() => {
+        $(this).removeClass('overflow-hidden');
+        setTimeout(() => {
+          $(myTab).animate({ scrollLeft: $('#disabled-tab').position().left });
+          setTimeout(() => $(myTab).animate({ scrollLeft: 0 }), 350);
+        }, 250);
+      });
     });
   });
 });
