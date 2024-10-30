@@ -1,4 +1,6 @@
 User-Agent: *
 Disallow: /static/img/
-Allow: /static/img/user/avatar.jpg
+Allow: /static/img/jpg/me.jpg
+Allow: /static/img/jpg/lineman.jpg
+Allow: /static/img/jpg/lineman-2.jpg
 Sitemap: https://inavleb.github.io/sitemap.xml
