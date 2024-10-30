@@ -1,5 +1,5 @@
 import './swr.js';
-import './gtag.js';
+// import './gtag.js';
 import './disqus.js';
 
 import vcard from "./vcard.js";
