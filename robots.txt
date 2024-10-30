@@ -1,4 +1,4 @@
 User-Agent: *
-Disallow: /static/img
+Disallow: /static/img/
 Allow: /static/img/user/avatar.jpg
 Sitemap: https://inavleb.github.io/sitemap.xml
