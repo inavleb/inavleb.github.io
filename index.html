@@ -33,16 +33,6 @@
   <meta property="twitter:image" content="https://inavleb.github.io/static/img/favicon/icon512_maskable.png">
   <!-- /meta social twitter (X) -->
 
-  <!-- old browsers -->
-  <noscript>
-    <meta http-equiv="refresh" content="0; url=/update.html">
-  </noscript>
-
-  <script nomodule>
-    window.location.replace('/update.html');
-  </script>
-  <!-- /old browsers -->
-
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-WCEWQDBVBJ"></script>
   <script>
@@ -138,6 +128,12 @@
         </div>
 
         <div class="text-center app-title fw-medium"></div>
+
+        <noscript>
+          <div class="text-center">
+            <small id="noscript-message" class="text-danger"></small>
+          </div>
+        </noscript>
       </div>
     </div>
   </div>
@@ -288,6 +284,12 @@
   <!-- module scripts -->
   <script src="/static/js/module/main.js" type="module" crossorigin="anonymous"></script>
   <!-- /module scripts -->
+
+  <!-- old browsers -->
+  <script nomodule>
+    window.location.replace('/update.html');
+  </script>
+  <!-- /old browsers -->
 </body>
 
 </html>

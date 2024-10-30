@@ -16,8 +16,8 @@ body {
   font-size: 1em;
   line-height: 0;
   background-size: contain;
-  background-position: center;
   background-repeat: no-repeat;
+  background-position: center;
 }
 
 .qr-code {
@@ -105,4 +105,8 @@ body {
 .text-bg-golden-rod:active {
   color: var(--arsenic-color);
   background-color: var(--golden-rod-color);
+}
+
+#noscript-message:after {
+  content: "Your browser does not support JavaScript!";
 }
