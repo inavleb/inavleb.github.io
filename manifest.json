@@ -1,0 +1,28 @@
+{
+  "id": "/",
+  "dir": "auto",
+  "lang": "pt-BR",
+  "scope": "/",
+  "name": "Delvani Eletricista",
+  "display": "standalone",
+  "start_url": "/",
+  "short_name": "Delvani Eletricista",
+  "orientation": "any",
+  "description": "Iluminando a sua vida com segurança e eficiência. Instalação, manutenção e soluções elétricas seguras e eficientes, do seu jeito!",
+  "theme_color": "#DAA520",
+  "background_color": "#212429",
+  "icons": [
+    {
+      "src": "/static/img/favicon/web-app-manifest-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "/static/img/favicon/web-app-manifest-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
+}
