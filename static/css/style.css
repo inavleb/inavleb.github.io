@@ -53,6 +53,14 @@ body {
   height: 7.5em;
 }
 
+.telegram-label:after {
+  content: "Telegram";
+}
+
+.whatsapp-label:after {
+  content: "WhatsApp";
+}
+
 .btn-chat {
   line-height: 1.25;
 }

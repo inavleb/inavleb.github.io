@@ -2,15 +2,17 @@
 <html lang="en">
 
 <head>
-  <script>
-    ((window.location.pathname.indexOf('offline.html') !== -1) && window.location.replace('/'));
-  </script>
-
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="robots" content="noindex,nofollow">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="googlebot" content="noindex,nofollow">
+
+  <script type="text/javascript">
+    (function() {
+      ((window.location.pathname.indexOf('offline.html') !== -1) && window.location.replace('/'));
+    })();
+  </script>
 
   <title>Sorry!</title>
 
@@ -51,7 +53,7 @@
     </g>
   </svg>
 
-  <script>
+  <script type="text/javascript">
     window.setInterval(function() { window.location.reload(); }, 10000);
   </script>
 </body>
