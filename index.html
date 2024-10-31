@@ -127,7 +127,7 @@
           <span class="bg-image app-icon rounded-circle shadow"></span>
         </div>
 
-        <div class="text-center app-title fw-medium"></div>
+        <div class="text-center app-title fw-medium" translate="no"></div>
 
         <noscript>
           <div class="text-center">
@@ -149,13 +149,13 @@
                   <img src="/static/img/jpg/me.jpg" class="user-avatar rounded-circle border border-3" alt="Foto do perfil de Delvani Eletricista">
                 </figure>
 
-                <h1 class="text-center fw-bold">
+                <h1 class="text-center fw-bold" data-business="name">
                   <span class="text-white opacity-75">Delvani</span> Eletricista
                 </h1>
               </header>
 
-              <p class="text-center text-white opacity-75 m-0">
-                INSTALAÇÃO &amp; MANUTENÇÃO ELÉTRICA.
+              <p class="text-center text-white opacity-75 m-0" data-business="description">
+                INSTALAÇÃO &amp; MANUTENÇÃO ELÉTRICA
               </p>
             </article>
           </div>
@@ -176,7 +176,7 @@
                 </li>
 
                 <li class="nav-item" role="presentation">
-                  <button class="nav-link text-golden-rod" id="disabled-tab" data-bs-toggle="tab" data-bs-target="#disabled-tab-pane" type="button" role="tab" aria-controls="disabled-tab-pane" aria-selected="false">QR Code</button>
+                  <button class="nav-link text-golden-rod" id="disabled-tab" data-bs-toggle="tab" data-bs-target="#disabled-tab-pane" type="button" role="tab" aria-controls="disabled-tab-pane" aria-selected="false" translate="no">QR Code</button>
                 </li>
               </ul>
             </div>
@@ -184,35 +184,39 @@
             <div class="tab-content bg-arsenic" id="myTabContent">
               <div class="tab-pane fade show active" id="home-tab-pane" role="tabpanel" aria-labelledby="home-tab" tabindex="0">
                 <div class="py-5">
-                  <div class="d-grid d-flex flex-wrap justify-content-center align-items-center text-white opacity-75 btn-chat gap-4 mb-2">
+                  <div class="d-grid d-flex flex-wrap justify-content-center align-items-center text-white opacity-75 btn-chat gap-3 mb-3">
                     <div class="text-center">
-                      <a id="btnTelegramChat" href="dialog:chat" class="text-decoration-none text-reset" aria-label="Conversar no Telegram">
+                      <a href="https://t.me/deletric" class="text-decoration-none text-reset" aria-label="Conversar no Telegram" data-business="chat">
                         <div class="icon-chat"><i class="bi bi-telegram"></i></div>
-                        <div class="label-chat"><span>Telegram</span></div>
+                        <div class="label-chat"><span translate="no">Telegram</span></div>
                       </a>
                     </div>
 
+                    <div class="vr"></div>
+
                     <div class="text-center">
-                      <a id="btnWhatsAppChat" href="dialog:chat" class="text-decoration-none text-reset" aria-label="Conversar no WhatsApp">
+                      <a href="https://wa.me/message/NJFMCEDAZEMTN1" class="text-decoration-none text-reset" aria-label="Conversar no WhatsApp" data-business="chat">
                         <div class="icon-chat"><i class="bi bi-whatsapp"></i></div>
-                        <div class="label-chat"><span>WhatsApp</span></div>
+                        <div class="label-chat"><span translate="no">WhatsApp</span></div>
                       </a>
                     </div>
                   </div>
 
                   <div class="text-center">
-                    <h2 class="fw-bold mb-5">
-                      <a href="dialog:tel" class="text-decoration-none text-reset">
+                    <div class="mb-5">
+                      <a class="btn text-bg-golden-rod fw-bolder px-3 fs-3" href="#" role="button" data-business="phone">
                         (88) 9-9355-6712
                       </a>
-                    </h2>
+                    </div>
 
                     <p class="m-0">
-                      <small>
-                        <span class="text-danger"><i class="bi bi-geo-alt-fill"></i></span>
-                        &nbsp;
-                        <span class="text-white opacity-75 m-0">ITAREMA-CE</span>
-                      </small>
+                      <a title="Google Maps" aria-label="Google Maps" class="text-decoration-none text-reset" href="https://www.google.com/maps/place/Delvani+Eletricista/@-2.926872,-39.9077109,12z/data=!4m6!3m5!1s0x69f5ecfe62f4e383:0x9eae0318b6fea99c!8m2!3d-2.926872!4d-39.907711!16s%2Fg%2F11wf_0hwzr">
+                        <small>
+                          <span class="text-danger"><i class="bi bi-geo-alt-fill"></i></span>
+                          &nbsp;
+                          <span class="text-white opacity-75 m-0" translate="no">ITAREMA-CE, BRA.</span>
+                        </small>
+                      </a>
                     </p>
                   </div>
                 </div>

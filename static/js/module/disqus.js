@@ -6,7 +6,7 @@ const username = 'inavleb';
 const page_url = `${protocol}//${host}${pathname}`;
 const page_identifier = (CRC32.str(page_url) >>> 0).toString(16);
 
-(function(script) {
+function loadComments(script) {
   script.src = `//${username}.disqus.com/embed.js`;
   script.dataset.timestamp = Date.now();
   window.disqus_config = function() {
@@ -15,4 +15,6 @@ const page_identifier = (CRC32.str(page_url) >>> 0).toString(16);
   };
 
   (document.body || document.head).append(script);
-})(document.createElement('script'));
+}
+
+window.addEventListener('DOMContentLoaded', () => loadComments(document.createElement('script')), false);
