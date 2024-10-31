@@ -6,19 +6,16 @@ import qrcode from "./qrcode.js";
 
 $(window).on('load', () => {
   vcard.fn = document.title;
-  vcard.tel = $('[data-business="phone"]').attr('title', function() { return `Ligar para ${$(this).text().trim()}`; }).attr('aria-label', function() { return $(this).attr('title'); }).text().replace(/\D+/g, '');
+  vcard.phone = $('[data-business="phone"]').text().trim();
+  vcard.tel = vcard.phone.replace(/\D+/g, '');
   qrcode.instance = qrcode(vcard({ fn: vcard.fn, tel: vcard.tel }));
   document.title = `${vcard.fn} ${$('[data-business="phone"]').text().trim()}`;
 
-  $('[data-business="phone"]').attr('href', `tel:${vcard.tel}`);
+  $('[data-business="phone"]').attr('href', `tel:${vcard.tel}`).attr('title', `Ligar para ${vcard.phone}`).attr('aria-label', function() { return $(this).attr('title'); });
   $('[data-business="chat"]').attr('title', function() { return `Conversar com ${vcard.fn} no ${$(this).text().trim()}`; }).attr('aria-label', function() { return $(this).attr('title'); });
 
   $('[ data-btn-download="qr-code"]').click(() => {
-    qrcode.instance.download({
-      name: `${vcard.fn} — ${$('a[href="dialog:tel"]').text().trim()}.qr_code`
-    });
-
-    return false;
+    return qrcode.instance.download({ name: `${vcard.fn} ${vcard.phone}` }), false;
   });
 
   qrcode.instance.getRawData().then(blob => {
@@ -34,7 +31,7 @@ $(window).on('load', () => {
         $(this).removeClass('overflow-hidden');
         setTimeout(() => {
           $(myTab).animate({ scrollLeft: $('#qr-code-tab').position().left });
-          setTimeout(() => $(myTab).animate({ scrollLeft: 0 }), 350);
+          setTimeout(() => $(myTab).animate({ scrollLeft: 0 }), 500);
         }, 250);
       });
     });
