@@ -33,7 +33,7 @@ $(window).on('load', () => {
       $(splashScreen).fadeOut(() => {
         $(this).removeClass('overflow-hidden');
         setTimeout(() => {
-          $(myTab).animate({ scrollLeft: $('#disabled-tab').position().left });
+          $(myTab).animate({ scrollLeft: $('#qr-code-tab').position().left });
           setTimeout(() => $(myTab).animate({ scrollLeft: 0 }), 350);
         }, 250);
       });
