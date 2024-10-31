@@ -6,7 +6,7 @@ import qrcode from "./qrcode.js";
 
 $(window).on('load', () => {
   vcard.fn = document.title;
-  vcard.tel = $('[data-business="phone"]').attr('title', function() { return `Fazer chamada para ${$(this).text().trim()}`; }).attr('aria-label', function() { return $(this).attr('title'); }).text().replace(/\D+/g, '');
+  vcard.tel = $('[data-business="phone"]').attr('title', function() { return `Ligar para ${$(this).text().trim()}`; }).attr('aria-label', function() { return $(this).attr('title'); }).text().replace(/\D+/g, '');
   qrcode.instance = qrcode(vcard({ fn: vcard.fn, tel: vcard.tel }));
   document.title = `${vcard.fn} ${$('[data-business="phone"]').text().trim()}`;
 
