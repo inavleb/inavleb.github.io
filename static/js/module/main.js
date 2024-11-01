@@ -4,6 +4,10 @@ import './disqus.js';
 import vcard from "./vcard.js";
 import qrcode from "./qrcode.js";
 
+function animate() {
+  $('[data-business="chat"]').parent().addClass('animate__animated animate__heartBeat');
+}
+
 $(window).on('load', () => {
   vcard.fn = document.title;
   vcard.phone = $('[data-business="phone"]').text().trim();
@@ -14,6 +18,16 @@ $(window).on('load', () => {
   $('.image-gallery').attr('data-glightbox', function() { return `description: ${$(this).attr('alt')}`; });
   $('[data-business="phone"]').attr('href', `tel:${vcard.tel}`).attr('title', `Ligar para ${vcard.phone}`).attr('aria-label', function() { return $(this).attr('title'); });
   $('[data-business="chat"]').attr('title', function() { return `Conversar com ${vcard.fn} no ${$(this).text().trim()}`; }).attr('aria-label', function() { return $(this).attr('title'); });
+
+  $('[data-business="chat"]').parent().on('animationend', function() {
+    $(this).removeClass('animate__animated animate__heartBeat');
+    $('[data-business="phone"]').addClass('animate__animated animate__shakeX');
+  });
+
+  $('[data-business="phone"]').on('animationend', function() {
+    $(this).removeClass('animate__animated animate__shakeX');
+    setTimeout(animate, 10000);
+  });
 
   $('[data-btn-download="qr-code"]').click(() => {
     return setTimeout(() => qrcode.instance.download({ name: `QR code de ${vcard.fn}` }), 0), false;
@@ -32,7 +46,10 @@ $(window).on('load', () => {
         $(this).removeClass('overflow-hidden');
         setTimeout(() => {
           $(myTab).animate({ scrollLeft: $('#qr-code-tab').position().left });
-          setTimeout(() => $(myTab).animate({ scrollLeft: 0 }), 500);
+          setTimeout(() => {
+            $(myTab).animate({ scrollLeft: 0 });
+            setTimeout(animate, 500);
+          }, 500);
         }, 250);
       });
     });
