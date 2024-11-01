@@ -108,6 +108,7 @@
   <link rel="preload" href="/static/css/style.css" as="style" crossorigin="anonymous">
   <link rel="preload" href="/static/css/loader.css" as="style" crossorigin="anonymous">
   <link rel="preload" href="/static/css/product-sans.css" as="style" crossorigin="anonymous">
+  <link rel="preload" href="/static/css/libs/glightbox.min.css" as="style" crossorigin="anonymous">
   <link rel="preload" href="/static/css/libs/bootstrap.min.css" as="style" crossorigin="anonymous">
   <link rel="preload" href="/static/css/libs/font-awesome.min.css" as="style" crossorigin="anonymous">
   <link rel="preload" href="/static/css/libs/bootstrap-icons.min.css" as="style" crossorigin="anonymous">
@@ -117,12 +118,14 @@
   <link rel="preload" href="/static/js/libs/crc32.js" as="script" crossorigin="anonymous">
   <link rel="preload" href="/static/js/module/main.js" as="script" crossorigin="anonymous">
   <link rel="preload" href="/static/js/libs/jquery.min.js" as="script" crossorigin="anonymous">
+  <link rel="preload" href="/static/js/libs/glightbox.min.js" as="script" crossorigin="anonymous">
   <link rel="preload" href="/static/js/libs/qr-code-styling.js" as="script" crossorigin="anonymous">
   <link rel="preload" href="/static/js/libs/bootstrap.bundle.min.js" as="script" crossorigin="anonymous">
   <link rel="preload" href="/static/js/libs/jquery.waitforimages.min.js" as="script" crossorigin="anonymous">
   <!-- /script preloads -->
 
   <!-- styles -->
+  <link rel="stylesheet" href="/static/css/libs/glightbox.min.css" crossorigin="anonymous">
   <link rel="stylesheet" href="/static/css/libs/bootstrap.min.css" crossorigin="anonymous">
   <link rel="stylesheet" href="/static/css/libs/font-awesome.min.css" crossorigin="anonymous">
   <link rel="stylesheet" href="/static/css/libs/bootstrap-icons.min.css" crossorigin="anonymous">
@@ -133,11 +136,7 @@
 </head>
 
 <body class="text-bg-arsenic user-select-none overflow-hidden">
-  <!-- Google Tag Manager (noscript) -->
-  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KFVJS7JT" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-  <!-- End Google Tag Manager (noscript) -->
-
-  <div id="splashScreen" class="position-fixed text-bg-arsenic top-0 start-0 w-100 h-100 z-3">
+  <div id="SPLASH_SCREEN" class="position-fixed text-bg-arsenic top-0 start-0 w-100 h-100 z-3">
     <div class="position-absolute overflow-y-scroll top-50 start-0 w-100 mh-100 py-3 translate-middle-y">
       <div class="container">
         <div class="text-center mb-3">
@@ -169,7 +168,7 @@
             <article>
               <header>
                 <figure class="text-center">
-                  <img src="/static/img/jpg/me.jpg" class="user-avatar rounded-circle border border-3" alt="Foto do perfil de Delvani Eletricista">
+                  <img src="/static/img/jpg/me.jpg" title="Ver imagem" aria-label="Ver imagem" alt="Foto do perfil de Delvani Eletricista" class="image-gallery user-avatar rounded-circle pe-pointer border border-3">
                 </figure>
 
                 <h1 class="text-center fw-bold" data-business="name">
@@ -211,7 +210,7 @@
                     <div class="text-center">
                       <a href="https://t.me/deletric" class="text-decoration-none text-reset" aria-label="Conversar no Telegram" data-business="chat">
                         <div class="icon-chat"><i class="fa fa-telegram"></i></div>
-                        <div class="label-chat-x"><small translate="no">Telegram</small></div>
+                        <div><small translate="no">Telegram</small></div>
                       </a>
                     </div>
 
@@ -220,7 +219,7 @@
                     <div class="text-center">
                       <a href="https://wa.me/message/NJFMCEDAZEMTN1" class="text-decoration-none text-reset" aria-label="Conversar no WhatsApp" data-business="chat">
                         <div class="icon-chat"><i class="bi bi-whatsapp"></i></div>
-                        <div class="label-chat-x"><small translate="no">WhatsApp</small></div>
+                        <div><small translate="no">WhatsApp</small></div>
                       </a>
                     </div>
                   </div>
@@ -235,7 +234,7 @@
                     </div>
 
                     <p class="m-0">
-                      <a title="Google Maps" aria-label="Google Maps" class="text-decoration-none text-reset" href="https://www.google.com/maps/place/Delvani+Eletricista/@-2.926872,-39.9077109,12z/data=!4m6!3m5!1s0x69f5ecfe62f4e383:0x9eae0318b6fea99c!8m2!3d-2.926872!4d-39.907711!16s%2Fg%2F11wf_0hwzr">
+                      <a title="Ver no Google Maps" aria-label="Ver no Google Maps" class="text-decoration-none text-reset map-gallery" href="https://maps.google.com/maps?hl=&amp;q=Itarema+Ceara&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed" data-glightbox>
                         <small>
                           <span class="text-danger"><i class="bi bi-geo-alt-fill"></i></span>
                           &nbsp;
@@ -302,9 +301,16 @@
     </div>
   </div>
 
+  <!-- Google Tag Manager (noscript) -->
+  <noscript>
+    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KFVJS7JT" height="0" width="0" style="display: none; visibility: hidden;"></iframe>
+  </noscript>
+  <!-- End Google Tag Manager (noscript) -->
+
   <!-- libs scripts -->
   <script src="/static/js/libs/crc32.js" crossorigin="anonymous"></script>
   <script src="/static/js/libs/jquery.min.js" crossorigin="anonymous"></script>
+  <script src="/static/js/libs/glightbox.min.js" crossorigin="anonymous"></script>
   <script src="/static/js/libs/qr-code-styling.js" crossorigin="anonymous"></script>
   <script src="/static/js/libs/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
   <script src="/static/js/libs/jquery.waitforimages.min.js" crossorigin="anonymous"></script>

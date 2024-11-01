@@ -1,14 +1,14 @@
-const vcard = data => {
-  if (Object.prototype.toString.call(data) !== '[object Object]') data = Object.create(null);
+const vcard = contact => {
+  if (Object.prototype.toString.call(contact) !== '[object Object]') contact = Object.create(null);
 
-  data.$ = ['BEGIN:VCARD', 'VERSION:3.0'];
-  data.fn = typeof data.fn === 'string' && data.fn.trim();
-  data.tel = typeof data.tel === 'string' && data.tel.trim();
+  contact._ = ['BEGIN:VCARD', 'VERSION:4.0'];
+  contact.name = typeof contact.name === 'string' && contact.name.trim();
+  contact.phone = typeof contact.phone === 'string' && contact.phone.trim();
 
-  if (data.fn) data.$.push(`N:;${data.fn}`, `FN:${data.fn}`);
-  if (data.tel) data.$.push(`TEL:${data.tel}`);
+  if (contact.name) contact._.push(`N:;${contact.name}`);
+  if (contact.phone) contact._.push(`TEL:${contact.phone}`);
 
-  return data.$.push('END:VCARD'), data.$.join('\n');
+  return contact._.push('END:VCARD'), contact._.join('\n');
 };
 
 export default vcard;

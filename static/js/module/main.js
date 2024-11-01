@@ -8,13 +8,14 @@ $(window).on('load', () => {
   vcard.fn = document.title;
   vcard.phone = $('[data-business="phone"]').text().trim();
   vcard.tel = vcard.phone.replace(/\D+/g, '');
-  qrcode.instance = qrcode(vcard({ fn: vcard.fn, tel: vcard.tel }));
+  qrcode.instance = qrcode(vcard({ name: vcard.fn, phone: vcard.tel }));
   document.title = `${vcard.fn} ${$('[data-business="phone"]').text().trim()}`;
 
+  $('.image-gallery').attr('data-glightbox', function() { return `description: ${$(this).attr('alt')}`; });
   $('[data-business="phone"]').attr('href', `tel:${vcard.tel}`).attr('title', `Ligar para ${vcard.phone}`).attr('aria-label', function() { return $(this).attr('title'); });
   $('[data-business="chat"]').attr('title', function() { return `Conversar com ${vcard.fn} no ${$(this).text().trim()}`; }).attr('aria-label', function() { return $(this).attr('title'); });
 
-  $('[ data-btn-download="qr-code"]').click(() => {
+  $('[data-btn-download="qr-code"]').click(() => {
     return qrcode.instance.download({ name: `${vcard.fn} ${vcard.phone}` }), false;
   });
 
@@ -27,7 +28,7 @@ $(window).on('load', () => {
 
     $(document.head).append(qrcode.style);
     $(document.body).waitForImages(function() {
-      $(splashScreen).fadeOut(() => {
+      $(SPLASH_SCREEN).fadeOut(() => {
         $(this).removeClass('overflow-hidden');
         setTimeout(() => {
           $(myTab).animate({ scrollLeft: $('#qr-code-tab').position().left });
@@ -35,6 +36,9 @@ $(window).on('load', () => {
         }, 250);
       });
     });
+
+    GLightbox({ selector: '.map-gallery' });
+    GLightbox({ selector: '.image-gallery' });
   });
 
   return false;
