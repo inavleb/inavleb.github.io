@@ -16,7 +16,7 @@ $(window).on('load', () => {
   $('[data-business="chat"]').attr('title', function() { return `Conversar com ${vcard.fn} no ${$(this).text().trim()}`; }).attr('aria-label', function() { return $(this).attr('title'); });
 
   $('[data-btn-download="qr-code"]').click(() => {
-    return qrcode.instance.download({ name: `${vcard.fn} ${vcard.phone}` }), false;
+    return setTimeout(() => qrcode.instance.download({ name: `QR code de ${vcard.fn}` }), 0), false;
   });
 
   qrcode.instance.getRawData().then(blob => {
