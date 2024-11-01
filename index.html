@@ -41,7 +41,7 @@
   <script type="text/javascript">
     (function() {
       "use strict";
-      (!!this && window.location.replace('/update.html'));
+      if (!!this) { window.location.replace('/update.html'); }
     })();
   </script>
   <!-- End old browsers -->
@@ -162,11 +162,11 @@
     </div>
   </div>
 
-  <div class="container">
+  <div class="container my-5">
     <div class="row justify-content-center">
       <div class="col-md-8">
         <div class="row row-cols-1 justify-content-center align-items-center">
-          <div class="col pt-5">
+          <div class="col">
             <article>
               <header>
                 <figure class="text-center">
@@ -290,7 +290,7 @@
                   </div>
                 </div>
 
-                <div class="text-center pb-4">
+                <div class="text-center py-5">
                   <button class="btn text-bg-golden-rod rounded-pill fw-medium px-3" data-btn-download="qr-code">
                     Download QR code
                   </button>

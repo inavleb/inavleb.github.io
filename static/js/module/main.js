@@ -9,15 +9,15 @@ function animate() {
 }
 
 $(window).on('load', () => {
-  vcard.fn = document.title;
-  vcard.phone = $('[data-business="phone"]').text().trim();
-  vcard.tel = vcard.phone.replace(/\D+/g, '');
-  qrcode.instance = qrcode(vcard({ name: vcard.fn, phone: vcard.tel }));
-  document.title = `${vcard.fn} ${$('[data-business="phone"]').text().trim()}`;
+  vcard.$name = document.title;
+  vcard.$phone = $('[data-business="phone"]').text().trim();
+  vcard.$tel = vcard.$phone.replace(/\D+/g, '');
+  qrcode.instance = qrcode(vcard({ name: vcard.$name, phone: vcard.$tel }));
+  document.title = `${vcard.$name} ${$('[data-business="phone"]').text().trim()}`;
 
   $('.image-gallery').attr('title', function() { return $(this).attr('alt') }).attr('aria-label', function() { return $(this).attr('alt') }).attr('data-glightbox', function() { return `description: ${$(this).attr('alt')}`; });
-  $('[data-business="phone"]').attr('href', `tel:${vcard.tel}`).attr('title', `Ligar para ${vcard.phone}`).attr('aria-label', function() { return $(this).attr('title'); });
-  $('[data-business="chat"]').attr('title', function() { return `Conversar com ${vcard.fn} no ${$(this).text().trim()}`; }).attr('aria-label', function() { return $(this).attr('title'); });
+  $('[data-business="phone"]').attr('href', `tel:${vcard.$tel}`).attr('title', `Ligar para ${vcard.$phone}`).attr('aria-label', function() { return $(this).attr('title'); });
+  $('[data-business="chat"]').attr('title', function() { return `Conversar com ${vcard.$name} no ${$(this).text().trim()}`; }).attr('aria-label', function() { return $(this).attr('title'); });
 
   $('[data-business="chat"]').parent().on('animationend', function() {
     $(this).removeClass('animate__animated animate__heartBeat');
@@ -30,7 +30,7 @@ $(window).on('load', () => {
   });
 
   $('[data-btn-download="qr-code"]').click(() => {
-    return setTimeout(() => qrcode.instance.download({ name: `QR code de ${vcard.fn}` }), 0), false;
+    return setTimeout(() => qrcode.instance.download({ name: `QR code de ${vcard.$name}` }), 0), false;
   });
 
   qrcode.instance.getRawData().then(blob => {
