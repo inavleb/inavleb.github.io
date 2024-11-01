@@ -1,4 +1,4 @@
-const vcard = contact => {
+export default contact => {
   if (Object.prototype.toString.call(contact) !== '[object Object]') contact = Object.create(null);
 
   contact._ = ['BEGIN:VCARD', 'VERSION:4.0'];
@@ -10,5 +10,3 @@ const vcard = contact => {
 
   return contact._.push('END:VCARD'), contact._.join('\n');
 };
-
-export default vcard;

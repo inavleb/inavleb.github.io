@@ -8,10 +8,12 @@ function animate() {
   $('[data-business="chat"]').parent().addClass('animate__animated animate__heartBeat');
 }
 
-$(window).on('load', () => {
+$(document).on('DOMContentLoaded', () => {
   vcard.$name = document.title;
   vcard.$phone = $('[data-business="phone"]').text().trim();
   vcard.$tel = vcard.$phone.replace(/\D+/g, '');
+  qrcode.style = document.createElement('style');
+  qrcode.style.type = 'text/css';
   qrcode.instance = qrcode(vcard({ name: vcard.$name, phone: vcard.$tel }));
   document.title = `${vcard.$name} ${$('[data-business="phone"]').text().trim()}`;
 
@@ -32,12 +34,12 @@ $(window).on('load', () => {
   $('[data-btn-download="qr-code"]').click(() => {
     return setTimeout(() => qrcode.instance.download({ name: `QR code de ${vcard.$name}` }), 0), false;
   });
+});
 
+$(window).on('load', () => {
   qrcode.instance.getRawData().then(blob => {
     qrcode.blob = blob;
-    qrcode.style = document.createElement('style');
     qrcode.blobURL = URL.createObjectURL(blob);
-    qrcode.style.type = 'text/css';
     qrcode.style.innerHTML = `.qr-code { background-image: url("${qrcode.blobURL}"); }`;
 
     $(document.head).append(qrcode.style);
