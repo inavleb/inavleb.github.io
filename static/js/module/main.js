@@ -54,10 +54,10 @@ $(window).on('load', () => {
           }, 500);
         }, 250);
       });
+      
+      GLightbox({ selector: '.map-gallery' });
+      GLightbox({ selector: '.image-gallery' });
     });
-
-    GLightbox({ selector: '.map-gallery' });
-    GLightbox({ selector: '.image-gallery' });
   });
 
   return false;

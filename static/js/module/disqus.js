@@ -1,4 +1,4 @@
-window.addEventListener('load', function(evt) {
+document.addEventListener('DOMContentLoaded', function(evt) {
   const host = location.host;
   const script = document.createElement('script');
   const protocol = location.protocol;
