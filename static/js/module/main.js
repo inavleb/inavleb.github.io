@@ -15,7 +15,7 @@ $(window).on('load', () => {
   qrcode.instance = qrcode(vcard({ name: vcard.fn, phone: vcard.tel }));
   document.title = `${vcard.fn} ${$('[data-business="phone"]').text().trim()}`;
 
-  $('.image-gallery').attr('data-glightbox', function() { return `description: ${$(this).attr('alt')}`; });
+  $('.image-gallery').attr('title', function() { return $(this).attr('alt') }).attr('aria-label', function() { return $(this).attr('alt') }).attr('data-glightbox', function() { return `description: ${$(this).attr('alt')}`; });
   $('[data-business="phone"]').attr('href', `tel:${vcard.tel}`).attr('title', `Ligar para ${vcard.phone}`).attr('aria-label', function() { return $(this).attr('title'); });
   $('[data-business="chat"]').attr('title', function() { return `Conversar com ${vcard.fn} no ${$(this).text().trim()}`; }).attr('aria-label', function() { return $(this).attr('title'); });
 
